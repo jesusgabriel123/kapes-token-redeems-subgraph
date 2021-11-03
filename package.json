@@ -1,5 +1,5 @@
 {
-  "name": "redeem-tokens-signers-subgraph",
+  "name": "kapes-token-redeems-subgraph",
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
@@ -7,12 +7,12 @@
     "codegen": "graph codegen",
     "release": "standard-version",
 
-    "thegraph:deploy:mainnet": "yarn build:mainnet && graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ gh_username/redeem-tokens-signers-mainnet",
+    "thegraph:deploy:mainnet": "yarn build:mainnet && graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ jesusgabriel123/redeem-tokens-signers-mainnet",
     "build:mainnet": "yarn prepare:mainnet && graph build",
     "prepare:mainnet": "mustache config/mainnet.json subgraph.template.yaml > subgraph.yaml",
     "deploy:mainnet": "yarn prepare:mainnet && yarn build:mainnet && yarn thegraph:deploy:mainnet",
 
-    "thegraph:deploy:ropsten": "yarn build:ropsten && graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ gh_username/redeem-tokens-signers-ropsten",
+    "thegraph:deploy:ropsten": "yarn build:ropsten && graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ jesusgabriel123/redeem-tokens-signers-ropsten",
     "build:ropsten": "yarn prepare:ropsten && graph build",
     "prepare:ropsten": "mustache config/ropsten.json subgraph.template.yaml > subgraph.yaml",
     "deploy:ropsten": "yarn prepare:ropsten && yarn build:ropsten && yarn thegraph:deploy:ropsten",
@@ -20,7 +20,7 @@
     "create-local": "graph create --node http://127.0.0.1:8020/ redeem-tokens-signers/subgraph",
     "remove-local": "graph remove --node http://127.0.0.1:8020/ redeem-tokens-signers/subgraph",
 
-    "thegraph:deploy:rinkeby": "yarn build:rinkeby && graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ gh_username/redeem-tokens-signers-rinkeby",
+    "thegraph:deploy:rinkeby": "yarn build:rinkeby && graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ jesusgabriel123/kapes-token-redeems-subgraph",
     "build:rinkeby": "yarn prepare:rinkeby && graph build",
     "prepare:rinkeby": "mustache config/rinkeby.json subgraph.template.yaml > subgraph.yaml",
     "deploy:rinkeby": "yarn prepare:rinkeby && yarn build:rinkeby && yarn thegraph:deploy:rinkeby",
