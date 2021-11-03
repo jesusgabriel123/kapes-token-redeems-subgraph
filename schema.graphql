@@ -1,0 +1,29 @@
+type Redeem @entity {
+  "ID (aka Internal ID)"
+  id: ID!
+  "Redeem tokens signer address"
+  contract: Bytes!
+  "User account"
+  account: Account!
+  "Signer account"
+  signer: Account!
+  "Nonce value used to redeem"
+  nonce: BigInt!
+  "Amount redeemed"
+  amount: BigInt!
+  "Nonce value used to redeem"
+  signature: Bytes!
+  "Tx hash"
+  txHash: String!
+  "Timestamp when the tx was executed"
+  timestamp: BigInt!
+  "Block number where the tx was executed"
+  blockNumber: BigInt!
+}
+
+type Account @entity {
+  "Account address"
+  id: ID!
+  totalRedeemedAmount: BigInt!
+  redeems: [Redeem!]! @derivedFrom(field: "account")
+}

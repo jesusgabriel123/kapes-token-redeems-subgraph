@@ -1,0 +1,27 @@
+specVersion: 0.0.3
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: RedeemTokensSigner
+    network: {{network}}
+    source:
+      startBlock: {{startBlock}}
+      address: '{{RedeemTokensSigner}}'
+      abi: RedeemTokensSigner
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Account
+        - Redeem
+      abis:
+        - name: RedeemTokensSigner
+          file: ./abis/RedeemTokensSigner.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+      callHandlers:
+        - function: redeem(address,address,uint256,uint256,uint256,bytes)
+          handler: handleRedeem
+      file: ./src/mappings/redeemTokensSignerMappings.ts
